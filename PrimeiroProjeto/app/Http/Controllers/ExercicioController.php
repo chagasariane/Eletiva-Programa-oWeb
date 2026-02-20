@@ -36,4 +36,17 @@ class ExercicioController extends Controller {
         return view('exercicio3', ['mult' => $mult]);
     }
 
+    public function exibirFormulario4(){
+        return view('exercicio4');
+    }
+    public function calcularDiv(Request $request){
+        $valor1 = $request->input('valor1');
+        $valor2 = $request->input('valor2');
+        if ($valor2 != 0){
+            $div = $valor1 / $valor2;
+            return view('exercicio4', ['div' => $div]);
+        } else{
+            return view('exercicio4', ['ndiv' => 0]);
+        }
+    }      
 }
