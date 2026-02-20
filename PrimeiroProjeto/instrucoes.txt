@@ -9,8 +9,8 @@ Para pc da Fatec:
 
 Passo a passo os exercícios:
 1. criar a view (resources/views) @section e @isset e formulário
-2. gerar formulario em https://vanessaborges2.github.io/Gerador-Formulario/ e colocar dentro da @section
-3. definir as rotas (routes/web.php)
-4. colocar o métodos na controller
+gerar formulario em https://vanessaborges2.github.io/Gerador-Formulario/ e colocar dentro da @section
+2. definir as rotas (routes/web.php)
+3. colocar o métodos na Controller.php (app\Http\Controllers\ExercicioController)
 
 30/04 - Não haverá aula
