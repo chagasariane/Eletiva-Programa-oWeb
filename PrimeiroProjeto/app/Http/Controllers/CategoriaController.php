@@ -31,15 +31,23 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            Categoria::create($request->all());
+        } catch(Exception $e){
+            Log::error('Erro ao inserir categoria: '. $e->getMessage, [
+                'stack' => $e->getStackTraceAsString()
+            ]);
+        }
+        return redirect()->route('categoria.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Categoria $categoria)
+    public function show($id)
     {
-        //
+        $categoria = Categoria::findOrFail($id);
+        return view('categoria.show', compact('categoria'));
     }
 
     /**
@@ -61,8 +69,16 @@ class CategoriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        //
+        try{
+            $categoria = Categoria::findOrFail($id);
+            $categoria->delete();
+        } catch(Exception $e){
+            Log::error('Erro ao excluir categoria: '. $e->getMessage, [
+                'stack' => $e->getStackTraceAsString()
+            ]);
+        }
+        return redirect()->route('categoria.index');
     }
 }

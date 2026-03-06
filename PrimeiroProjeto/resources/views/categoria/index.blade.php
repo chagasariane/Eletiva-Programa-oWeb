@@ -20,7 +20,7 @@
                   <td>{{ $c->descricao }}</td>
                   <td class="d-flex gap-2">
                     <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="#" class="btn btn-sm btn-info">Consultar</a>
+                    <a href="/categoria/{{ $c->id }}" class="btn btn-sm btn-info">Consultar</a>
                   </td>
                 </tr>
               @endforeach
